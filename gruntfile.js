@@ -7,7 +7,8 @@ module.exports = function(grunt) {
         },
         options: {
           transform: [
-            ['babelify', { presets: ['es2015'] }],
+            ['babelify', { presets: ['es2015', 'react'] }],
+            ['envify', { global: true, NODE_ENV: 'production' }],
             ['uglifyify', { global: true }]
           ]
         }
@@ -21,7 +22,7 @@ module.exports = function(grunt) {
             debug: true
           },
           transform: [
-            ['babelify', { presets: ['es2015'] }]
+            ['babelify', { presets: ['es2015', 'react'] }]
           ]
         }
       }
@@ -60,7 +61,7 @@ module.exports = function(grunt) {
     },
     watch: {
       app: {
-        files: ['src/app/**/*.js'],
+        files: ['src/app/**/*.js', 'src/app/**/*.jsx'],
         tasks: ['browserify:debug']
       },
       html: {
