@@ -1,7 +1,7 @@
 {
   "name": "grunt-browserify-babel-starter",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Starter project for Grunt, Browserify, Browsersync, Babel, and ES2015",
   "main": "index.js",
   "scripts": {
@@ -44,6 +44,7 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-less": "^1.4.1",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-eslint": "^20.0.0",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
