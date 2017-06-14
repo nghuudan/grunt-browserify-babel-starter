@@ -61,7 +61,7 @@ module.exports = function(grunt) {
     },
     watch: {
       app: {
-        files: ['src/app/**/*.js', 'src/app/**/*.jsx'],
+        files: ['src/app/**/*.{js,jsx}'],
         tasks: ['browserify:debug']
       },
       html: {
