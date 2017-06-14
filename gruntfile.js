@@ -48,6 +48,9 @@ module.exports = function(grunt) {
         }
       }
     },
+    eslint: {
+      app: ['src/app/**/*.js']
+    },
     less: {
       dist: {
         files: {
@@ -80,8 +83,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-eslint');
 
-  grunt.registerTask('build', ['clean', 'copy', 'browserify:build', 'less']);
-  grunt.registerTask('debug', ['clean', 'copy', 'browserify:debug', 'less']);
+  grunt.registerTask('build', ['clean', 'copy', 'eslint', 'browserify:build', 'less']);
+  grunt.registerTask('debug', ['clean', 'copy', 'eslint', 'browserify:debug', 'less']);
   grunt.registerTask('default', ['debug', 'browserSync', 'watch']);
 };

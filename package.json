@@ -41,6 +41,7 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-less": "^1.4.1",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-eslint": "^20.0.0",
     "uglifyify": "^3.0.4"
   }
 }
