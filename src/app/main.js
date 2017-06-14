@@ -1,6 +1,11 @@
-const onLoad = () => {
-  const app = document.getElementById('app');
-  app.innerHTML = '<h1>App Works!</h1>';
-};
+import Vue from 'vue';
+import App from './components/App.vue';
 
-window.addEventListener('load', onLoad, false);
+export default new Vue({
+  el: '#app',
+  render: (createElem) => createElem(App, {
+    props: {
+      appTitle: 'App Works!'
+    }
+  })
+});
