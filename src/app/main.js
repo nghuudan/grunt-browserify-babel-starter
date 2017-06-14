@@ -1,6 +1,6 @@
-const onLoad = () => {
-  const app = document.getElementById('app');
-  app.innerHTML = '<h1>App Works!</h1>';
-};
+import angular from 'angular';
+import './app.module';
 
-window.addEventListener('load', onLoad, false);
+angular.element(() => {
+  angular.bootstrap(document.getElementById('app'), ['App']);
+});
