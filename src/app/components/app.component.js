@@ -3,6 +3,6 @@ export const AppComponent = {
     appTitle: '@'
   },
   template: `
-    <h1>{{ $ctrl.appTitle }}</h1>
+    <ui-view></ui-view>
   `
 };
