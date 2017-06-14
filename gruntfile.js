@@ -43,19 +43,34 @@ module.exports = function(grunt) {
       dist: ['dist/']
     },
     copy: {
-      dist: {
-        files: {
-          'dist/index.html': ['src/index.html']
-        }
+      assets: {
+        files: [
+          {
+            cwd: 'src/assets/',
+            src: '**/*',
+            dest: 'dist/assets/',
+            expand: true
+          }
+        ]
+      },
+      html: {
+        files: [
+          {
+            cwd: 'src/',
+            src: '**/*.html',
+            dest: 'dist/',
+            expand: true
+          }
+        ]
       }
     },
     eslint: {
-      app: ['src/app/**/*.{js,jsx}']
+      app: ['gruntfile.js', 'src/app/**/*.{js,jsx}']
     },
     less: {
       dist: {
         files: {
-          'dist/app.styles.css': ['./src/less/main.less']
+          'dist/app.styles.css': ['./src/styles/main.less']
         },
         options: {
           compress: true
@@ -67,12 +82,16 @@ module.exports = function(grunt) {
         files: ['src/app/**/*.{js,jsx}'],
         tasks: ['browserify:debug']
       },
+      assets: {
+        files: ['src/assets/**/*'],
+        tasks: ['copy:assets']
+      },
       html: {
         files: ['src/**/*.html'],
-        tasks: ['copy']
+        tasks: ['copy:html']
       },
       less: {
-        files: ['src/less/**/*.less'],
+        files: ['src/styles/**/*.less'],
         tasks: ['less']
       }
     }
