@@ -7,7 +7,6 @@ Starter project for Grunt, Browserify, Browsersync, Babel, and ES2015
 3. Change to the project directory: `cd grunt-browserify-babel-starter`
 4. *OPTIONAL* &ndash; Choose a preconfigured branch:
   * [`git checkout angular1`](https://github.com/nghuudan/grunt-browserify-babel-starter/tree/angular1): Angular 1.x with UI-Router
-  * [`git checkout jquery`](https://github.com/nghuudan/grunt-browserify-babel-starter/tree/jquery): jQuery
   * [`git checkout react`](https://github.com/nghuudan/grunt-browserify-babel-starter/tree/react): React with React Router 4.x
   * [`git checkout vuejs`](https://github.com/nghuudan/grunt-browserify-babel-starter/tree/vuejs): Vue.js with Vue Router
 5. Install the project dependencies with NPM: `npm install`
