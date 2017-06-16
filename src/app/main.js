@@ -1,6 +1,4 @@
-const onLoad = () => {
-  const app = document.getElementById('app');
-  app.innerHTML = '<h1>App Works!</h1>';
-};
+import $ from 'jquery';
+import { App } from './components/app-component';
 
-window.addEventListener('load', onLoad, false);
+$(() => $('#app').html(App));
