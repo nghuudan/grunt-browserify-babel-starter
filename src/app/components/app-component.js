@@ -1,3 +1,3 @@
 import $ from 'jquery';
 
-export const App = $('<h1>App Works!</h1>');
+export const App = ({ appTitle }) => $(`<h1>${appTitle}</h1>`);

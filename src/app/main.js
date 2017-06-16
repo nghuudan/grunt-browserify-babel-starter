@@ -1,4 +1,6 @@
 import $ from 'jquery';
 import { App } from './components/app-component';
 
-$(() => $('#app').html(App));
+$(() => $('#app').html(
+  App({ appTitle: 'App Works!' })
+));
