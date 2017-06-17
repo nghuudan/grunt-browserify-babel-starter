@@ -42,6 +42,7 @@
     "grunt-contrib-less": "^1.4.1",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-eslint": "^20.0.0",
+    "phaser": "^2.6.2",
     "uglifyify": "^3.0.4"
   }
 }
