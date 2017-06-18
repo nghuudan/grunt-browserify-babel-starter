@@ -1,3 +1,5 @@
+var loadGruntTasks = require('load-grunt-tasks');
+
 module.exports = function(grunt) {
   grunt.initConfig({
     browserify: {
@@ -97,13 +99,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-browserify');
-  grunt.loadNpmTasks('grunt-browser-sync');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-eslint');
+  loadGruntTasks(grunt);
 
   grunt.registerTask('build', ['clean', 'copy', 'eslint', 'browserify:build', 'less']);
   grunt.registerTask('debug', ['clean', 'copy', 'eslint', 'browserify:debug', 'less']);
