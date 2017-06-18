@@ -69,12 +69,17 @@ module.exports = function(grunt) {
       app: ['gruntfile.js', 'src/app/**/*.js']
     },
     less: {
-      dist: {
+      build: {
         files: {
           'dist/app.styles.css': ['./src/styles/main.less']
         },
         options: {
           compress: true
+        }
+      },
+      debug: {
+        files: {
+          'dist/app.styles.css': ['./src/styles/main.less']
         }
       }
     },
@@ -93,14 +98,17 @@ module.exports = function(grunt) {
       },
       less: {
         files: ['src/styles/**/*.less'],
-        tasks: ['less']
+        tasks: ['less:debug']
       }
     }
   });
 
   loadGruntTasks(grunt);
 
-  grunt.registerTask('build', ['clean', 'copy', 'eslint', 'browserify:build', 'less']);
-  grunt.registerTask('debug', ['clean', 'copy', 'eslint', 'browserify:debug', 'less']);
-  grunt.registerTask('default', ['debug', 'browserSync', 'watch']);
+  var targetOption = grunt.option('target') || 'build';
+
+  grunt.registerTask('build', ['clean', 'copy', 'eslint',
+    'browserify:' + targetOption, 'less:' + targetOption]);
+
+  grunt.registerTask('default', ['build', 'browserSync', 'watch']);
 };
