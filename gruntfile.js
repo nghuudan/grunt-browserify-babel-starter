@@ -68,17 +68,21 @@ module.exports = function(grunt) {
         ]
       }
     },
-    // Vue linter is incompatible
-    // eslint: {
-    //   app: ['gruntfile.js', 'src/app/**/*.js']
-    // },
+    eslint: {
+      app: ['gruntfile.js', 'src/app/**/*.js']
+    },
     less: {
-      dist: {
+      build: {
         files: {
           'dist/app.styles.css': ['./src/styles/main.less']
         },
         options: {
           compress: true
+        }
+      },
+      debug: {
+        files: {
+          'dist/app.styles.css': ['./src/styles/main.less']
         }
       }
     },
@@ -97,14 +101,17 @@ module.exports = function(grunt) {
       },
       less: {
         files: ['src/styles/**/*.less'],
-        tasks: ['less']
+        tasks: ['less:debug']
       }
     }
   });
 
   loadGruntTasks(grunt);
 
-  grunt.registerTask('build', ['clean', 'copy', 'browserify:build', 'less']);
-  grunt.registerTask('debug', ['clean', 'copy', 'browserify:debug', 'less']);
-  grunt.registerTask('default', ['debug', 'browserSync', 'watch']);
+  var targetOption = grunt.option('target') || 'build';
+
+  grunt.registerTask('build', ['clean', 'copy', 'eslint',
+    'browserify:' + targetOption, 'less:' + targetOption]);
+
+  grunt.registerTask('default', ['build', 'browserSync', 'watch']);
 };

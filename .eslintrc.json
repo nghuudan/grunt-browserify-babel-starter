@@ -5,11 +5,10 @@
         "es6": true,
         "node": true
     },
-    "extends": ["vue", "eslint:recommended"],
+    "extends": ["eslint:recommended"],
     "parserOptions": {
         "sourceType": "module"
     },
-    "plugins": ["vue"],
     "rules": {
         "indent": [
             "error",
