@@ -1,7 +1,7 @@
 {
   "name": "grunt-browserify-babel-starter",
   "private": true,
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Starter project for Grunt, Browserify, Browsersync, Babel, and ES2015",
   "main": "index.js",
   "scripts": {
@@ -43,6 +43,7 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-eslint": "^20.0.0",
     "phaser": "^2.6.2",
+    "load-grunt-tasks": "^3.5.2",
     "uglifyify": "^3.0.4"
   }
 }
