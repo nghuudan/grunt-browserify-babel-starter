@@ -1,14 +1,14 @@
 {
   "name": "grunt-browserify-babel-starter",
   "private": true,
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Starter project for Grunt, Browserify, Browsersync, Babel, and ES2015",
   "main": "index.js",
   "scripts": {
     "build": "grunt build",
     "clean": "grunt clean",
-    "debug": "grunt debug",
-    "start": "grunt",
+    "debug": "grunt build --target=debug",
+    "start": "grunt --target=debug",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
