@@ -8,10 +8,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: Home,
-      props: {
-        appTitle: 'App Works!'
-      }
+      component: Home
     },
     {
       path: '*',
