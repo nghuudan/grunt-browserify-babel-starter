@@ -1,7 +1,5 @@
 export const AppComponent = {
-  bindings: {
-    appTitle: '@'
-  },
+  controller: 'appCtrl',
   template: `
     <ui-view></ui-view>
   `
