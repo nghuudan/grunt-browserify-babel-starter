@@ -1,17 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import { HashRouter, Route } from 'react-router-dom';
+import reducers from './reducers';
 import App from './components/app-component.jsx';
 
-const Root = () => (
-  <Route path="/" render={() => <App appTitle="App Works!" />} />
-);
+const store = createStore(reducers);
 
-ReactDOM.render(
+render(
   (
-    <HashRouter>
-      <Root />
-    </HashRouter>
+    <Provider store={ store }>
+      <HashRouter>
+        <Route path="/" component={ App } />
+      </HashRouter>
+    </Provider>
   ),
   document.getElementById('app')
 );

@@ -1,18 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { appTitle } from '../actions';
 
-export default class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      appTitle: props.appTitle
-    };
+  }
+  componentDidMount() {
+    this.props.setAppTitle('App Works!');
   }
   render() {
-    return <h1>{ this.state.appTitle }</h1>;
+    return <h1>{ this.props.appTitle }</h1>;
   }
 }
 
 App.propTypes = {
-  appTitle: PropTypes.string
+  appTitle: PropTypes.string,
+  setAppTitle: PropTypes.func
 };
+
+const mapStateToProps = (state) => {
+  return {
+    appTitle: state.demo.appTitle
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setAppTitle: (title) => {
+      dispatch(appTitle(title));
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
