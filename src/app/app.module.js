@@ -11,3 +11,5 @@ export const App = angular.module('App', [uiRouter])
   .component('app', AppComponent)
   .controller('appCtrl', AppController)
   .service('appService', AppService);
+
+export default 'App';

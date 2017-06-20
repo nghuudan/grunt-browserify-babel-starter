@@ -1,6 +1,6 @@
 import angular from 'angular';
-import './app.module';
+import AppModule from './app.module';
 
 angular.element(() => {
-  angular.bootstrap(document.getElementById('app'), ['App']);
+  angular.bootstrap(document.getElementById('app'), [AppModule]);
 });
