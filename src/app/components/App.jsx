@@ -5,7 +5,7 @@ import { setAppTitle } from '../actions';
 
 class App extends Component {
   componentDidMount() {
-    this.props.setAppTitle('App Works!');
+    this.props.setAppTitle();
   }
   render() {
     return <h1>{ this.props.appTitle }</h1>;
