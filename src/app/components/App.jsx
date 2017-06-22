@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { appTitle } from '../actions';
+import { setAppTitle } from '../actions';
 
 class App extends Component {
   componentDidMount() {
@@ -25,8 +25,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setAppTitle: (title) => {
-      dispatch(appTitle(title));
+    setAppTitle() {
+      dispatch(setAppTitle(true));
     }
   };
 };
