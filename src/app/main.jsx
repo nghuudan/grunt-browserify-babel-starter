@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { HashRouter, Route } from 'react-router-dom';
 import reducers from './reducers';
-import App from './components/app-component.jsx';
+import App from './components/App.jsx';
 
 const store = createStore(reducers);
 

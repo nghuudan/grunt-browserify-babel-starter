@@ -4,9 +4,6 @@ import { connect } from 'react-redux';
 import { appTitle } from '../actions';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
   componentDidMount() {
     this.props.setAppTitle('App Works!');
   }
